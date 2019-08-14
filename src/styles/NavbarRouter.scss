@@ -1,0 +1,118 @@
+
+.NavbarRouter {
+
+}
+.NavbarRouter-nav {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.NavbarRouter-nav-img {
+    height: 100px;
+}
+.NavbarRouter-nav-items-container {
+    text-align: right;
+    animation: slide-in-from-left 500ms linear;
+    // p {
+        // width: 25%;
+        // padding: 3px 0 3px 0;
+        // margin: 0 0 0 75%;
+    // }
+}
+@keyframes slide-in-from-left {
+    from {
+        transform: translate(0, -300px);
+    }
+    to {
+        
+    }
+}
+.NavbarRouter-nav-item{
+    font-size: 1.1rem;
+    border-bottom: 2px solid #000;
+    margin: 0 auto;
+    padding: 5px 0;
+
+    .NavbarRouter-nav-item-text {
+        text-decoration: none;
+        margin: 0 auto;
+        padding: 0 10px 0 50px;
+        color: #122bd8;
+    }
+}
+.NavbarRouter-nav-button {
+    float: right;
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 80px;
+    width: 80px;
+    background-color: #12d1b8;
+    cursor: pointer;
+    .NavbarRouter-nav-button-line{
+        height: 20px;
+        width: 70px;
+        background-color: #fff;
+        margin: 5px auto;
+        border-radius: 7px;
+        text-align: center;
+    }
+    .NavbarRouter-nav-button-close-line {
+        height: 20px;
+        width: 70px;
+        background-color: #fff;
+        border-radius: 7px;
+        animation: NavbarRouter-nav-button-close-line-1 500ms linear;
+        transform: rotate(-45deg);
+        position: relative;
+        top: 30px;
+        left: 5px;
+
+    }
+    .NavbarRouter-nav-button-close-line-2 {
+        height: 20px;
+        width: 70px;
+        background-color: #fff;
+        border-radius: 7px;
+        animation: NavbarRouter-nav-button-close-line-2 500ms linear;
+        transform: rotate(45deg);
+        position: relative;
+        top: 10px;
+        left: 5px;
+    }
+    .NavbarRouter-nav-button-close-line-3 {
+        height: 20px;
+        width: 70px;
+        background-color: #fff;
+        margin: 5px auto;
+        border-radius: 7px;
+        animation: NavbarRouter-nav-button-close-line-3 500ms linear;
+        // display: block;
+        position: relative;
+        top: 10px;
+        opacity: 0;
+    }
+}
+@keyframes NavbarRouter-nav-button-close-line-1 {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-45deg);
+    }
+}
+@keyframes NavbarRouter-nav-button-close-line-2 {
+    from{
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(45deg);
+    }
+}
+@keyframes NavbarRouter-nav-button-close-line-3 {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

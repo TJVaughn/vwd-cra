@@ -1,14 +1,22 @@
 //REQUIRED FUNCTIONS IMPORT
-import React from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Switch } from 'react-router-dom';
+import loadable from '@loadable/component';
 
-//COMPONENTS IMPORT
-import HomePage from './HomePage';
-import AboutPage from './AboutPage';
-import PortfolioPage from './PortfolioPage';
 //STYLES IMPORT
+import '../styles/NavbarRouter.scss';
+
+//IMAGES IMPORT 
+// const SiteLogo = loadable(() => import('../images/vwd-logo.png'));
+import SiteLogo from '../images/vwd-logo-500.png';
+//COMPONENTS IMPORT
+const HomePage = loadable(() => import('./HomePage'), {fallback: "Loading Content"});
+const AboutPage = loadable(() => import('./AboutPage'), {fallback: "Loading Content"});
+const PortfolioPage = loadable(() => import('./PortfolioPage'), {fallback: "Loading Content"});
 
 //END IMPORTS
+
 function IndexRouter() {
   return(
       <div>
@@ -16,7 +24,6 @@ function IndexRouter() {
       </div>
   );
 }
-
 function AboutRouter() {
   return(
         <div>
@@ -32,38 +39,90 @@ function PortfolioRouter(){
         </div>
     );
 }
-// function Users() {
-//   return <h2>Users</h2>;
-// }
+const navbarRoutesArray = [
+  {path: '/about/', component: AboutRouter},
+  {path: '/portfolio/', component: PortfolioRouter}
+]
+const navbarRoutesMap = navbarRoutesArray.map(item => 
+  <Route key={`${item.component}-${item.path}`} path={item.path} component={item.component} />
+);
 
-function AppRouter() {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about/">About</Link>
-            </li>
-            <li>
-              <Link to="/portfolio/">Portfolio</Link>
-            </li>
-            {/* <li>
-              <Link to="/users/">Users</Link>
-            </li> */}
-          </ul>
-        </nav>
+const navbarItemsArray = [
+  {id: 0, to: "/", text: "Home"},
+  {id: 1, to: "/about/", text: "About"},
+  {id: 2, to: "/portfolio/", text: "Portfolio"}
+];
+const navbarItemsMap = navbarItemsArray.map(item =>
+  <p className="NavbarRouter-nav-item"><Link className="NavbarRouter-nav-item-text" to={item.to} key={`navbar-item-${item.id}`}>{item.text}</Link></p>
+)
 
-        <Route path="/" exact component={IndexRouter} />
-        <Route path="/about/" component={AboutRouter} />
-        <Route path="/portfolio/" component={PortfolioRouter} />
-        {/* <Route path="/users/" component={Users} /> */}
-      </div>
-    </Router>
-  );
+class AppRouter extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      navMenuBtn: false
+    }
+    this.navStateHandler = this.navStateHandler.bind(this);
+    this.navStateLogoHandler = this.navStateLogoHandler.bind(this);
+  }
+  navStateHandler(){
+    if(!this.state.navMenuBtn){
+      this.setState({navMenuBtn: true});
+    } else {
+      this.setState({navMenuBtn: false});
+    }
+  }
+  navStateLogoHandler(){
+    if(this.state.navMenuBtn){
+      this.setState({navMenuBtn: false})
+    }
+  }
+  render(){
+    return (
+      <Router>
+        <div className="NavbarRouter">
+          <nav className="NavbarRouter-nav Margin-div">
+            <Link onClick={this.navStateLogoHandler} to="/">
+              <img className="NavbarRouter-nav-img" src={SiteLogo} alt="Vaughn Web Development" />
+            </Link>
+            
+            <div>
+              <div className="NavbarRouter-nav-button" onClick={this.navStateHandler}>
+                {this.state.navMenuBtn
+                ? <div>
+                  <div className="NavbarRouter-nav-button-close-line"></div>
+                  <div className="NavbarRouter-nav-button-close-line-2"></div>
+                  <div className="NavbarRouter-nav-button-close-line-3"></div>
+                </div>
+                : <div>
+                  <div className="NavbarRouter-nav-button-line"></div>
+                  <div className="NavbarRouter-nav-button-line"></div>
+                  <div className="NavbarRouter-nav-button-line"></div>
+                </div>
+                }
+
+              </div>
+            </div>
+          </nav>
+          <div className="Margin-div">
+            {this.state.navMenuBtn
+            ? <div className="NavbarRouter-nav-items-container" onClick={this.navStateHandler}>
+                {navbarItemsMap}
+              </div>
+            : <div></div>
+            }
+          </div>
+
+
+          <Switch>
+            <Route path="/" exact component={IndexRouter} />
+            {navbarRoutesMap}
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
+ 
 }
 
 export default AppRouter;
