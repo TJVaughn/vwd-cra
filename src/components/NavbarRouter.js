@@ -3,17 +3,18 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Switch } from 'react-router-dom';
 import loadable from '@loadable/component';
-
 //STYLES IMPORT
 import '../styles/NavbarRouter.scss';
 
 //IMAGES IMPORT 
 // const SiteLogo = loadable(() => import('../images/vwd-logo.png'));
 import SiteLogo from '../images/vwd-logo-500.png';
+// import FeaturedImg from '../images/code-cloud-v1.png';
 //COMPONENTS IMPORT
 const HomePage = loadable(() => import('./HomePage'), {fallback: "Loading Content"});
 const AboutPage = loadable(() => import('./AboutPage'), {fallback: "Loading Content"});
 const PortfolioPage = loadable(() => import('./PortfolioPage'), {fallback: "Loading Content"});
+const FeaturedImg = loadable(() => import('./FeaturedImg'));
 
 //END IMPORTS
 
@@ -53,7 +54,9 @@ const navbarItemsArray = [
   {id: 2, to: "/portfolio/", text: "Portfolio"}
 ];
 const navbarItemsMap = navbarItemsArray.map(item =>
-  <p className="NavbarRouter-nav-item"><Link className="NavbarRouter-nav-item-text" to={item.to} key={`navbar-item-${item.id}`}>{item.text}</Link></p>
+  <p key={`navbar-item-${item.id}`} className="NavbarRouter-nav-item">
+    <Link className="NavbarRouter-nav-item-text" to={item.to}>{item.text}</Link>
+  </p>
 )
 
 class AppRouter extends Component {
@@ -112,8 +115,7 @@ class AppRouter extends Component {
             : <div></div>
             }
           </div>
-
-
+            <FeaturedImg />
           <Switch>
             <Route path="/" exact component={IndexRouter} />
             {navbarRoutesMap}
