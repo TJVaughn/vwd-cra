@@ -115,7 +115,10 @@ class AppRouter extends Component {
             : <div></div>
             }
           </div>
-            <FeaturedImg />
+      
+          <FeaturedImg />
+          
+            
           <Switch>
             <Route path="/" exact component={IndexRouter} />
             {navbarRoutesMap}
