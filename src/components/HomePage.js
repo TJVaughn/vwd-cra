@@ -4,7 +4,10 @@ class HomePage extends Component{
     render(){
         return(
             <div className="HomePage Margin-div">
-                Homepage
+                <h2>
+                    Spread the word, make money, and help people!
+                </h2>
+
             </div>
         );
     }

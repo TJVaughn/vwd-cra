@@ -5,7 +5,7 @@ import { Switch } from 'react-router-dom';
 import loadable from '@loadable/component';
 //STYLES IMPORT
 import '../styles/NavbarRouter.scss';
-
+import '../styles/FeaturedImage.scss';
 //IMAGES IMPORT 
 // const SiteLogo = loadable(() => import('../images/vwd-logo.png'));
 import SiteLogo from '../images/vwd-logo-500.png';
