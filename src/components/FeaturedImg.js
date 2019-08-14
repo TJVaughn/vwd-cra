@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Img from '../images/code-cloud-v4.png';
 
-const randomBinaryArr = ["Vaughn Web Development"];
+const randomBinaryArr = [" ", "Vaughn Web Development", " "];
 function addToRandomBinary() {
   for(let i = 0; i < 25; i++){
     if(Math.random() >= 0.5){
@@ -27,11 +28,18 @@ const randomBinaryMap = randomBinaryArr.map(item =>
 class FeaturedImg extends Component {
     render(){
         return(
-            <div className="Featured-img-container">
-            <div className="Binary-animation">
-              {randomBinaryMap}
+            <div>
+                <div className="Featured-img-container">
+                    <img className="Featured-img-img" src={Img} alt="Vaughn Web Development codes" />
+                </div>
+                <div className="Binary-animation-container">
+                    <div className="Binary-animation">
+                        {randomBinaryMap}
+                    </div>
+                </div>
+                
             </div>
-          </div>
+            
         ); 
     }
 }
