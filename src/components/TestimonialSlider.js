@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// const pMinDelay = require('p-min-delay');
 
 const barryTest = {text: "\"Incredible thanks to Trevor, who in 1 week, produced what the [OMITTED] vendor could not do in 8 weeks (and 13 teleconferences)\"",
 source: "-Barry Z"}
@@ -12,22 +13,35 @@ class TestimonialSlider extends Component {
         super(props);
         this.state = {
             testimonial: barryTest.text,
-            testimonialSource: barryTest.source
+            testimonialSource: barryTest.source,
+            testimonialAnimation: false
         }
         this.testimonialHandler = this.testimonialHandler.bind(this);
     }
     testimonialHandler(){
-        this.setState({testimonial: JoAnnaTest.text, testimonialSource: JoAnnaTest.source});
-        if(this.state.testimonial===JoAnnaTest.text){
-            this.setState({testimonial: barryTest.text, testimonialSource: barryTest.source})
+        if(this.state.testimonial === barryTest.text){
+            this.setState({testimonial: JoAnnaTest.text, testimonialSource: JoAnnaTest.source, testimonialAnimation: true});
+        } else {
+            this.setState({testimonial: barryTest.text, testimonialSource: barryTest.source});
         }
     }
     render(){
         return(
-            <div className="TestimonialSlider">
-                <div onPointerEnter={this.testimonialHandler}>{this.state.testimonial}</div>
-                <div className="Font-weight-700">{this.state.testimonialSource}</div>
+            <div className="TestimonialSlider-container">
+                <div className="TestimonialSlider Testimonial-slide-in">
+                    <div>
+                        {this.state.testimonial}<br />
+                        <div className="Font-weight-700">
+                            {this.state.testimonialSource}          
+                        </div>
+                        <button onClick={this.testimonialHandler} className="See-more-btn">See more</button>
+                    </div>
+                </div>
+   
+                
+                    
             </div>
+            
             
         );
     }
