@@ -6,6 +6,7 @@ import loadable from '@loadable/component';
 //STYLES IMPORT
 import '../styles/NavbarRouter.scss';
 import '../styles/FeaturedImage.scss';
+import '../styles/HomePage.scss';
 //IMAGES IMPORT 
 // const SiteLogo = loadable(() => import('../images/vwd-logo.png'));
 import SiteLogo from '../images/vwd-logo-500.png';
@@ -21,6 +22,7 @@ const FeaturedImg = loadable(() => import('./FeaturedImg'));
 function IndexRouter() {
   return(
       <div>
+          <FeaturedImg pageTitle="Vaughn Web Development" />
           <HomePage />
       </div>
   );
@@ -28,7 +30,8 @@ function IndexRouter() {
 function AboutRouter() {
   return(
         <div>
-            <AboutPage />
+          <FeaturedImg pageTitle="About" />
+          <AboutPage />
         </div>
   );
 }
@@ -36,7 +39,8 @@ function AboutRouter() {
 function PortfolioRouter(){
     return (
         <div>
-            <PortfolioPage />
+          <FeaturedImg pageTitle="Portfolio" />
+          <PortfolioPage />
         </div>
     );
 }
@@ -63,7 +67,7 @@ class AppRouter extends Component {
   constructor(props){
     super(props);
     this.state = {
-      navMenuBtn: false
+      navMenuBtn: false,
     }
     this.navStateHandler = this.navStateHandler.bind(this);
     this.navStateLogoHandler = this.navStateLogoHandler.bind(this);
@@ -80,14 +84,18 @@ class AppRouter extends Component {
       this.setState({navMenuBtn: false})
     }
   }
+
   render(){
     return (
       <Router>
         <div className="NavbarRouter">
           <nav className="NavbarRouter-nav Margin-div">
-            <Link onClick={this.navStateLogoHandler} to="/">
-              <img className="NavbarRouter-nav-img" src={SiteLogo} alt="Vaughn Web Development" />
-            </Link>
+            <div>
+              <Link onClick={this.navStateLogoHandler} to="/">
+                <img className="NavbarRouter-nav-img" src={SiteLogo} alt="Vaughn Web Development" />
+              </Link>
+            </div>
+            
             
             <div>
               <div className="NavbarRouter-nav-button" onClick={this.navStateHandler}>
@@ -115,10 +123,8 @@ class AppRouter extends Component {
             : <div></div>
             }
           </div>
-      
-          <FeaturedImg />
-          
-            
+                 
+  
           <Switch>
             <Route path="/" exact component={IndexRouter} />
             {navbarRoutesMap}
