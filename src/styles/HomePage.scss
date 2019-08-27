@@ -1,31 +1,56 @@
+.dots-container{
+    display: flex;
+    margin: 0 auto;
+    align-content: center;
+    justify-content: center;
+}
+.solid-dot{
+    border: 3px solid #000;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    margin: 0 1px;
+    // float: right;
+}
+.empty-dot {
+    border: 3px solid #000;
+    border-radius: 50%;
+    background-color: #000;
+    width: 5px;
+    height: 5px;
+    margin: 0 1px;
+}
 .TestimonialSlider-container {
     // overflow: hidden;
     box-sizing: content-box;
-    display: grid;
-    grid-template-columns: 100%;
+    display: block;
+    // grid-template-columns: repeat(1, 99%);
+    border: 1px solid #000;
+    border-radius: 3px;
+    box-shadow: #777 5px 5px 5px;
+    // margin: 10px;
+    padding: 5px 5px 20px 5px;
+    background-color: #666;
 }
 .TestimonialSlider{
-    padding: 20px 5px;
-    border: 1px solid #000;
-    border-radius: 3px;
-    box-shadow: #777 5px 5px 5px;
+    
     text-align: center;
     font-size: 1.2rem;
     font-weight: 500;
-    background-color: #ffffcc;
-    margin: 10px 0;
+    // background-color: #ffffcc;
+    margin: 0 10px;
+    animation: test-slide-out 20000ms linear;
 }
-.TestimonialSlider-2 {
-    padding: 20px 5px;
-    border: 1px solid #000;
-    border-radius: 3px;
-    box-shadow: #777 5px 5px 5px;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-    background-color: #ffffcc;
-    margin: 10px 0;
+@keyframes test-slide-out {
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: translate(100%);
+    }
 }
+
 .Testimonial-slide-in {
     animation: testimonial-slide-in 500ms linear;
 
@@ -36,13 +61,20 @@
     }
 }
 .See-more-btn {
-    border: 1px solid #000;
-    border-radius: 5px;
+    border: 2px solid #fff;
+    border-radius: 50%;
     background-color: #12d1b8;
     display: block;
-    margin: 0;
-    padding: 5px;
+    margin: 0 auto;
+    // padding: 5px;
     cursor: pointer;
-    width: 100px;
+    width: 32px;
+    height: 32px;
     color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    float: right;
+}
+.left-testimonial-btn{
+    float: left;
 }

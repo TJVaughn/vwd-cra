@@ -1,45 +1,126 @@
 import React, { Component } from 'react';
 // const pMinDelay = require('p-min-delay');
+const testimonialArray = [
+    {
+        id: 0, 
+        author: "Barry Z", 
+        text: "\"Incredible thanks to Trevor, who in 1 week, produced what the [OMITTED] vendor could not do in 8 weeks (and 13 teleconferences)\""
+    },
+    {
+        id: 1,
+        author: "JoAnna N",
+        text: "\"I used to struggle with my website (formatting, updating, getting it to look and work the way I want it to). Having Trevor take the reins on it has made my life easier and my online business more streamlined and able to flourish. He is patient, knowledgeable, diligent, and a pleasure to work with. highly recommend him to anyone looking for website help that wants to work with someone trustworthy, caring, and conscientious!\""
+    },
+    {
+        id: 2,
+        author: "Bob H",
+        text: "\"Trevor did an excellent job, and was able to execute any request I had.\""
+    }
+]
 
-const barryTest = {text: "\"Incredible thanks to Trevor, who in 1 week, produced what the [OMITTED] vendor could not do in 8 weeks (and 13 teleconferences)\"",
-source: "-Barry Z"}
+// const barryTest = {text: "\"Incredible thanks to Trevor, who in 1 week, produced what the [OMITTED] vendor could not do in 8 weeks (and 13 teleconferences)\"",
+// source: "-Barry Z"}
 
 
-const JoAnnaTest = {text: "\"I used to struggle with my website (formatting, updating, getting it to look and work the way I want it to). Having Trevor take the reins on it has made my life easier and my online business more streamlined and able to flourish. He is patient, knowledgeable, diligent, and a pleasure to work with. highly recommend him to anyone looking for website help that wants to work with someone trustworthy, caring, and conscientious!\"",
-source: "-JoAnna N"}
-
+// const JoAnnaTest = {text: "\"I used to struggle with my website (formatting, updating, getting it to look and work the way I want it to). Having Trevor take the reins on it has made my life easier and my online business more streamlined and able to flourish. He is patient, knowledgeable, diligent, and a pleasure to work with. highly recommend him to anyone looking for website help that wants to work with someone trustworthy, caring, and conscientious!\"",
+// source: "-JoAnna N"}
+const oneDot = <div className="dots-container">
+    <div className="solid-dot"></div>
+    <div className="empty-dot"></div>
+    <div className="empty-dot"></div>
+</div>
+const twoDots = <div className="dots-container">
+    <div className="empty-dot"></div>
+    <div className="solid-dot"></div>
+    <div className="empty-dot"></div>
+</div>
+const threeDots = <div className="dots-container">
+    <div className="empty-dot"></div>
+    <div className="empty-dot"></div>
+    <div className="solid-dot"></div>
+</div>
 class TestimonialSlider extends Component {
     constructor(props){
         super(props);
         this.state = {
-            testimonial: barryTest.text,
-            testimonialSource: barryTest.source,
-            testimonialAnimation: false
+            testimonial: testimonialArray[0].text,
+            testimonialSource: testimonialArray[0].author,
+            testimonialAnimation: false,
+            testimonialId: testimonialArray[0].id,
+            testimonialDots: oneDot
         }
-        this.testimonialHandler = this.testimonialHandler.bind(this);
+        this.testimonialHandlerLeft = this.testimonialHandlerLeft.bind(this);
+        this.testimonialHandlerRight = this.testimonialHandlerRight.bind(this);
+
     }
-    testimonialHandler(){
-        if(this.state.testimonial === barryTest.text){
-            this.setState({testimonial: JoAnnaTest.text, testimonialSource: JoAnnaTest.source, testimonialAnimation: true});
+
+    testimonialHandlerRight(){
+        if(this.state.testimonial === testimonialArray[0].text){
+            this.setState({
+                testimonialId: testimonialArray[1].id, 
+                testimonial: testimonialArray[1].text, 
+                testimonialSource: testimonialArray[1].author,
+                testimonialDots: twoDots
+            })
+        } else if (this.state.testimonial === testimonialArray[1].text){
+            this.setState({
+                testimonialId: testimonialArray[2].id, 
+                testimonial: testimonialArray[2].text, 
+                testimonialSource: testimonialArray[2].author,
+                testimonialDots: threeDots
+            })
         } else {
-            this.setState({testimonial: barryTest.text, testimonialSource: barryTest.source});
+            this.setState({
+                testimonialId: testimonialArray[0].id, 
+                testimonial: testimonialArray[0].text, 
+                testimonialSource: testimonialArray[0].author,
+                testimonialDots: oneDot
+            })
+        }
+    }
+    testimonialHandlerLeft(){
+        if(this.state.testimonial === testimonialArray[1].text){
+            this.setState({
+                testimonialId: testimonialArray[0].id, 
+                testimonial: testimonialArray[0].text, 
+                testimonialSource: testimonialArray[0].author,
+                testimonialDots: oneDot
+            })
+        } else if (this.state.testimonial === testimonialArray[2].text){
+            this.setState({
+                testimonialId: testimonialArray[1].id, 
+                testimonial: testimonialArray[1].text, 
+                testimonialSource: testimonialArray[1].author,
+                testimonialDots: twoDots
+            })
+        } else {
+            this.setState({
+                testimonialId: testimonialArray[2].id, 
+                testimonial: testimonialArray[2].text, 
+                testimonialSource: testimonialArray[2].author,
+                testimonialDots: threeDots
+            })
         }
     }
     render(){
         return(
             <div className="TestimonialSlider-container">
-                <div className="TestimonialSlider Testimonial-slide-in">
+                <h2 className="Align-center White">Don't just take my word for it, see what my clients are saying:</h2>
+                <div className="TestimonialSlider Testimonial-slide-in White">
                     <div>
+                        <button className="See-more-btn left-testimonial-btn" onClick={this.testimonialHandlerLeft} >{"<"}</button>
+                        <button onClick={this.testimonialHandlerRight} className="See-more-btn">{">"}</button>
+
                         {this.state.testimonial}<br />
                         <div className="Font-weight-700">
                             {this.state.testimonialSource}          
                         </div>
-                        <button onClick={this.testimonialHandler} className="See-more-btn">See more</button>
+                        <div className="dots-container">
+                            {this.state.testimonialDots}
+                        </div>
                     </div>
-                </div>
-   
-                
                     
+                </div>
             </div>
             
             
