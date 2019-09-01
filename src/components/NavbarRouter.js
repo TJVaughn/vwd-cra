@@ -92,7 +92,7 @@ class AppRouter extends Component {
           <nav className="NavbarRouter-nav Margin-div">
             <div>
               <Link onClick={this.navStateLogoHandler} to="/">
-                <img className="NavbarRouter-nav-img" src={SiteLogo} alt="Vaughn Web Development" />
+                <img id="Navbar-logo" className="NavbarRouter-nav-img" src={SiteLogo} alt="Vaughn Web Development" />
               </Link>
             </div>
             
