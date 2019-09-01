@@ -10,7 +10,7 @@ class FeaturedImg extends Component {
     render(){
         return(
             <div>
-                <div className="Featured-img-container">
+                <div className="Featured-img-container Fade-in">
                     <div className="Page-title-container">
                         <h1 className="Page-title">{this.props.pageTitle}</h1>
                     </div>

@@ -24,6 +24,11 @@ class HomePage extends Component{
                         <p>
                             It is a valid concern and one that I hope you'll give me a moment to comment on. 
                         </p>
+                    </div>
+                </LazyLoad>
+                {/* AFTER THE FOLD */}
+                <LazyLoad once height={100} offset={-100}>
+                    <div className="Fade-in">
                         <p>
                             Yes, in modern times, it's never been easier to start a website. There are many tools and page builders
                             being peddled every day.
@@ -50,23 +55,24 @@ class HomePage extends Component{
                 </LazyLoad>
                 
                 <div>
-                    <LazyLoad offset={-125} height={'100%'}>
+                    <LazyLoad offset={-115} height={'100%'}>
                         <TestimonialSlider />
 
                     </LazyLoad>
                 </div>
-                <div>
-                <h3>Who am I?</h3>
-                <div>
-                    <p>
-                        I am a self taught web applications engineer. Sure that means I don't have a fancy degree affirming 
-                        my skills, but I can show you the work I've done, and I can tell you more about what that entails.
-                    </p>
-                    <p>
-                        Here are some other words about me!
-                    </p>
-                </div>
-                </div>
+                <LazyLoad height={100} offset={-115}>
+                    <div className="Pop-in">
+                        <h3>Who am I?</h3>
+                        <div>
+                            <p>
+                                I am a self taught web applications engineer.
+                            </p>
+                            <p>
+                            </p>
+                        </div>
+                    </div>
+                </LazyLoad>
+                <div className="margin-bottom-50"></div>
             </div>
         );
     }

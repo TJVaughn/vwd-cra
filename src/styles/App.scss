@@ -4,7 +4,7 @@
     margin: 0 20px;
   }
   @media only screen and (max-width: 420px) {
-    margin: 0 5px;
+    margin: 0 10px;
   }
 }
 .Display-inline {
@@ -21,4 +21,26 @@
 }
 .White {
   color: #fff;
+}
+.margin-bottom-100{
+  margin-bottom: 100px;
+}
+.margin-bottom-50{
+  margin-bottom: 50px;
+}
+
+.Pop-in {
+  animation: pop-in 600ms ease;
+}
+@keyframes pop-in {
+  from{
+    opacity: 0;
+  }
+  50% {
+    font-size: 1.2rem;
+  }
+  to{
+    opacity: 1;
+    font-size: 1rem;
+  }
 }

@@ -22,7 +22,7 @@
     margin: 0 1px;
 }
 .TestimonialSlider-container {
-    // overflow: hidden;
+    overflow: hidden;
     box-sizing: content-box;
     display: block;
     // grid-template-columns: repeat(1, 99%);
@@ -40,16 +40,8 @@
     font-weight: 500;
     // background-color: #ffffcc;
     margin: 0 10px;
-    animation: test-slide-out 20000ms linear;
 }
-@keyframes test-slide-out {
-    from {
-        transform: translate(0);
-    }
-    to {
-        transform: translate(100%);
-    }
-}
+
 
 .Testimonial-slide-in {
     animation: testimonial-slide-in 500ms linear;
@@ -58,6 +50,20 @@
 @keyframes testimonial-slide-in {
     from {
         transform: translate(50%);
+    }
+    to {
+        transform: translate(0);
+    }
+}
+.Testimonial-slide-in-c {
+    animation: testimonial-slide-in-c 500ms linear;
+}
+@keyframes testimonial-slide-in-c {
+    from {
+        transform: translate(50%);
+    }
+    to {
+        transform: translate(0);
     }
 }
 .See-more-btn {
@@ -78,29 +84,13 @@
 .left-testimonial-btn{
     float: left;
 }
-.Jump-animation {
-    animation: jump-in 500ms infinite;
-}
-@keyframes jump-in {
-    from {
-        transform: translate(0%, 0%);
-    }
-    25% {
-        transform: translate(-25%, -25%);
-    }
-    75% {
-        transform: translate(25%, 25%)
-    }
-    to {
-        transform: translate(0, 0);
-    }
-}
+
 .Fade-in {
     animation: Fade-in 1000ms ease;
 }
 @keyframes Fade-in {
     from{
-        opacity: 0.5;
+        opacity: 0;
     }
     to {
         opacity: 1;
@@ -114,5 +104,6 @@
     color: #12d1b8;
     border-radius: 5px;
     background-color: #000;
-    padding: 2px; 
+    padding: 2px;
+    opacity: 0.6; 
 }
