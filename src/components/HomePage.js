@@ -28,8 +28,9 @@ class HomePage extends Component{
                 </div>
 
                 {/* AFTER THE FOLD */}
-                <LazyLoad once height={100} offset={-100}>
+                <LazyLoad once height={100} offset={-115}>
                     <div className="Fade-in">
+                        <h2>The Results</h2>
                         <PortfolioSites />
                     </div>
                 </LazyLoad>
