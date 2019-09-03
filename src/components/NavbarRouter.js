@@ -22,7 +22,7 @@ const FeaturedImg = loadable(() => import('./FeaturedImg'));
 function IndexRouter() {
   return(
       <div>
-          <FeaturedImg pageTitle="Vaughn Web Development" />
+          <FeaturedImg pageTitle="Take your business to the next level" />
           <HomePage />
       </div>
   );
