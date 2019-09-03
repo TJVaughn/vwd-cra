@@ -16,6 +16,8 @@ const HomePage = loadable(() => import('./HomePage'), {fallback: "Loading Conten
 const AboutPage = loadable(() => import('./AboutPage'), {fallback: "Loading Content"});
 const PortfolioPage = loadable(() => import('./PortfolioPage'), {fallback: "Loading Content"});
 const FeaturedImg = loadable(() => import('./FeaturedImg'));
+const NedOfficialsPage = loadable(() => import('./NedOfficialsPage'));
+const TTLPage = loadable(() => import('./TTLPage'));
 
 //END IMPORTS
 
@@ -44,9 +46,27 @@ function PortfolioRouter(){
         </div>
     );
 }
+function NedOfficialsRouter(){
+  return(
+    <div>
+      <FeaturedImg pageTitle="NED Officials" />
+      <NedOfficialsPage />
+    </div>
+  )
+}
+function TTLRouter(){
+  return(
+    <div>
+      <FeaturedImg pageTitle="Transformation Through Love" />
+      <TTLPage />
+    </div>
+  )
+}
 const navbarRoutesArray = [
   {path: '/about/', component: AboutRouter},
-  {path: '/portfolio/', component: PortfolioRouter}
+  {path: '/portfolio/', component: PortfolioRouter},
+  {path: '/nedofficials/', component: NedOfficialsRouter},
+  {path: '/transformation-through-love', component: TTLRouter}
 ]
 const navbarRoutesMap = navbarRoutesArray.map(item => 
   <Route key={`${item.component}-${item.path}`} path={item.path} component={item.component} />

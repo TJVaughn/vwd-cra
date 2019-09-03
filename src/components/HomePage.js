@@ -38,7 +38,9 @@ class HomePage extends Component{
                 
                 <LazyLoad height={100} offset={-115}>
                     <div className="Pop-in">
-                        
+                        <div>
+                            <a className="Contact-card" href="mailto:vaughnwebdev@gmail.com">Contact me to learn more!</a>
+                        </div>
                     </div>
                 </LazyLoad>
                 <div className="margin-bottom-50"></div>

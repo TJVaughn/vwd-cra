@@ -132,8 +132,9 @@
     color: #0005;
 }
 .Portfolio-items-text{
-    color: #fff;
+    color: #12d1b8;
     display: block;
+    margin: 10px 0;
     h3 {
         font-size: 1.4rem;
         @media only screen and (max-width: 380px){
@@ -141,8 +142,8 @@
         }
     }
     text-decoration: none;
-    position: relative;
-    bottom: 60%;
+    // position: relative;
+    top: 10px;
     @media only screen and (max-width: 380px){
         bottom: 50%;
     }
