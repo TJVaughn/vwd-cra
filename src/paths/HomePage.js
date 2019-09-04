@@ -3,6 +3,7 @@ import LazyLoad from 'react-lazyload';
 import TestimonialSlider from '../components/TestimonialSlider';
 import BackToTop from '../components/BackToTop';
 import PortfolioSites from '../components/PortfolioSites';
+import ContactCard from '../components/ContactCard';
 
 class HomePage extends Component{
     render(){
@@ -37,9 +38,7 @@ class HomePage extends Component{
                 
                 
                 <LazyLoad height={100} offset={-115}>
-                    <div className="Pop-in">
-                        <a className="Contact-card" href="mailto:vaughnwebdev@gmail.com">Contact me at vaughnwebdev@gmail.com</a>
-                    </div>
+                    <ContactCard emailText="Email me at VaughnWebDev@gmail.com" />
                 </LazyLoad>
                 <div className="margin-bottom-50"></div>
             </div>

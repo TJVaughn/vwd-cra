@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ContactCard from '../components/ContactCard'; 
 
 class NedOfficialsPage extends Component {
 		static defaultProps = {
@@ -20,6 +21,7 @@ class NedOfficialsPage extends Component {
 				<p>
 					{this.props.pageAbout}
 				</p>
+				<ContactCard />
     		</div>
     	);
     }

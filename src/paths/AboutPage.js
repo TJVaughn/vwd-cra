@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import profilePic from '../images/profile-pic.png';
 import LazyLoad from 'react-lazyload';
 import BackToTop from '../components/BackToTop';
-
+import ContactCard from '../components/ContactCard';
 
 class AboutPage extends Component{
     render(){
@@ -49,12 +49,8 @@ class AboutPage extends Component{
                     </p>
                 </LazyLoad>
                 <LazyLoad height={100} offset={-115}>
-                    <div className="Pop-in">
-                        <p>
-                            If you're interested in working together, send me an email
-                        </p>
-                        <a className="Contact-card" href="mailto:vaughnwebdev@gmail.com">Vaughnwebdev@gmail.com</a>
-                    </div>
+                    <p>If you're interested in working together, send me an email</p>
+                    <ContactCard  />
                 </LazyLoad>
                 <div className="margin-bottom-50"></div>
 

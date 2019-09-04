@@ -48,15 +48,19 @@ a {
   color: #12d1b8;
   text-decoration: none;
 }
+.Contact-card-container{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
 .Contact-card{
   padding: 20px 20px;
   margin: 20px 10%;
   background-color: #333;
   border: 1px solid #000;
   border-radius: 10px;
-  box-shadow: #000 repeat(3, 5px);
+  box-shadow: #000 5px 5px 5px;
   text-align: center;
-  display: block;
+  // display: block;
 }
 .Fade-in {
   animation: Fade-in 1000ms ease;
