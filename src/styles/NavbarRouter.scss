@@ -32,15 +32,15 @@
 }
 @keyframes slide-in-from-bot {
     from {
-        transform: translate(0, 50px);
+        transform: translate(0, 40px);
     }
     to {
         
     }
 }
 .NavbarRouter-nav-item{
-    font-size: 1.1rem;
-    padding: 5px;
+    font-size: 1.2rem;
+    padding: 10px;
     display: inline-block;
     text-decoration: none;
     color: #122bd8;
