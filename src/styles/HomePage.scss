@@ -85,17 +85,6 @@
     float: left;
 }
 
-.Fade-in {
-    animation: Fade-in 1000ms ease;
-}
-@keyframes Fade-in {
-    from{
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 .Back-to-top{
     position: fixed;
     bottom: 10px;
@@ -143,10 +132,10 @@
     }
     text-decoration: none;
     // position: relative;
-    top: 10px;
-    @media only screen and (max-width: 380px){
-        bottom: 50%;
-    }
+    // // top: 10px;
+    // @media only screen and (max-width: 380px){
+    //     bottom: 50%;
+    // }
     text-align: center;
     font-weight: 700;
 }

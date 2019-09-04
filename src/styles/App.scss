@@ -58,3 +58,14 @@ a {
   text-align: center;
   display: block;
 }
+.Fade-in {
+  animation: Fade-in 1000ms ease;
+}
+@keyframes Fade-in {
+  from{
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

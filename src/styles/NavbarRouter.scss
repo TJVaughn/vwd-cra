@@ -22,13 +22,17 @@
     height: 100px;
 }
 .NavbarRouter-nav-items-container {
+    animation: slide-in-from-bot 500ms linear;
+    z-index: -100;
+    // display: flex;
+    background-color: #f8f8f8;
+    border-top: 2px solid #000;
     text-align: center;
-    animation: slide-in-from-left 500ms linear;
-    margin: 7px 0;
+
 }
-@keyframes slide-in-from-left {
+@keyframes slide-in-from-bot {
     from {
-        transform: translate(-300px, 0);
+        transform: translate(0, 50px);
     }
     to {
         
@@ -36,17 +40,11 @@
 }
 .NavbarRouter-nav-item{
     font-size: 1.1rem;
-    border-bottom: 2px solid #000;
-    border-top: 2px solid #000;
-    // margin: 5px auto;
-    padding: 5px 0;
-    display: inline;
-    .NavbarRouter-nav-item-text {
-        text-decoration: none;
-        // margin: 5px auto;
-        padding: 0 20px;
-        color: #122bd8;
-    }
+    padding: 5px;
+    display: inline-block;
+    text-decoration: none;
+    color: #122bd8;
+    // margin: auto;
 }
 .NavbarRouter-nav-button {
     float: right;

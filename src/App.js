@@ -5,8 +5,8 @@ import React from 'react';
 import NavbarRouter from './NavbarRouter';
 
 //STYLES IMPORT
-import '../styles/App.scss';
-import '../styles/NavbarRouter.scss';
+import './styles/App.scss';
+import './styles/NavbarRouter.scss';
 
 function App() {
   return (
