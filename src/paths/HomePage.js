@@ -16,13 +16,14 @@ class HomePage extends Component{
                 <LazyLoad once height={100} offset={-100}>
                     <div className="Fade-in">
                         <p>
-                            Owning a website can be so many things! You can use it to help the world, and you can also use it 
-                            to put a little money in your pocket!
+                            Building a website, and developing it's presence can be quite an undertaking, but you don't have to 
+                            do it alone!
                         </p>
                         
                     </div>
                 </LazyLoad>
                 <div>
+                    <h3>Testimonials</h3>
                     <LazyLoad offset={-115} height={'100%'}>
                         <TestimonialSlider />
                     </LazyLoad>
@@ -35,10 +36,8 @@ class HomePage extends Component{
                         <PortfolioSites />
                     </div>
                 </LazyLoad>
-                
-                
-                <LazyLoad height={100} offset={-115}>
-                    <ContactCard emailText="Email me at VaughnWebDev@gmail.com" />
+                <LazyLoad offset={-110} height={100}>
+                    <ContactCard />
                 </LazyLoad>
                 <div className="margin-bottom-50"></div>
             </div>

@@ -1,0 +1,18 @@
+.Footer {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    background-color: #555;
+    margin: 10px 0 0 0;
+    padding: 0 10%;
+    color: #fff;
+    z-index: -150;
+    @media only screen and (max-width: 600px){
+        padding: 0 5px;
+    }
+    @media only screen and (max-width: 370px){
+        grid-template-columns: repeat(2, 50%);
+    }
+}
+.Footer-links {
+    display: block;
+}

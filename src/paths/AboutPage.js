@@ -50,7 +50,9 @@ class AboutPage extends Component{
                 </LazyLoad>
                 <LazyLoad height={100} offset={-115}>
                     <p>If you're interested in working together, send me an email</p>
-                    <ContactCard  />
+                </LazyLoad>
+                <LazyLoad offset={-115} height={100} once>
+                    <ContactCard />
                 </LazyLoad>
                 <div className="margin-bottom-50"></div>
 

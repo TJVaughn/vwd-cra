@@ -9,7 +9,20 @@ const testimonialArray = [
     {
         id: 1,
         author: "JoAnna N",
-        text: <div className="Testimonial-slide-in-c">"I used to struggle with my website (formatting, updating, getting it to look and work the way I want it to). Having Trevor take the reins on it has made my life easier and my online business more streamlined and able to flourish. He is patient, knowledgeable, diligent, and a pleasure to work with. highly recommend him to anyone looking for website help that wants to work with someone trustworthy, caring, and conscientious!"</div>
+        text: <div className="Testimonial-slide-in-c">
+            <p>
+              "I used to struggle with my website (formatting, updating, getting it to look and work the way I want it to). 
+            </p>
+            <p>
+              Having Trevor take the reins on it has 
+              <strong> made my life easier and my online business more streamlined and able to flourish</strong>. 
+            </p>
+            <p>
+              He is patient, knowledgeable, diligent, and a pleasure to work with. <br />
+              I highly recommend him to anyone looking for website help that wants to work with someone trustworthy, 
+              caring, and conscientious!"
+            </p>
+          </div>
     },
     {
         id: 2,

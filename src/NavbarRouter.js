@@ -3,12 +3,14 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Switch } from 'react-router-dom';
 import loadable from '@loadable/component';
+// import LazyLoad from 'react-lazyload';
 //STYLES IMPORT
 import './styles/NavbarRouter.scss';
 import './styles/FeaturedImage.scss';
 import './styles/HomePage.scss';
 import './styles/About.scss';
 import './styles/Portfolio.scss';
+import './styles/Footer.scss';
 
 //IMAGES IMPORT 
 // const SiteLogo = loadable(() => import('../images/vwd-logo.png'));
@@ -22,6 +24,7 @@ const AboutPage = loadable(() => import('./paths/AboutPage'), {fallback: "Loadin
 const PortfolioPage = loadable(() => import('./paths/PortfolioPage'), {fallback: "Loading Content"});
 const FeaturedImg = loadable(() => import('./components/FeaturedImg'));
 const PortfolioSiteContainer = loadable(() => import('./paths/PortfolioSiteContainer'));
+const Footer = loadable(() => import('./components/Footer'));
 
 //END IMPORTS
 
@@ -30,6 +33,7 @@ function IndexRouter() {
       <div>
           <FeaturedImg pageTitle="Take your business to the next level" />
           <HomePage />
+          <Footer />
       </div>
   );
 }
@@ -38,6 +42,7 @@ function AboutRouter() {
         <div>
           <FeaturedImg pageTitle="About Me" />
           <AboutPage />
+          <Footer />
         </div>
   );
 }
@@ -46,8 +51,8 @@ function PortfolioRouter(){
     return (
         <div>
           <FeaturedImg pageTitle="Portfolio" />
-          
           <PortfolioPage />
+          <Footer />
         </div>
     );
 }
@@ -59,6 +64,15 @@ function NedOfficialsRouter(){
         pageTitle="NED Officials"
         pageSubtitle="Bringing New England Ice Hockey officials together"
         thumbnail={nedOImg}
+        testimonial={
+          <div>
+            <p>
+              "Incredible thanks to Trevor, who in 1 week, 
+              produced what the [OMITTED] vendor could not do in 8 weeks (and 13 teleconferences)"  
+            </p>
+          </div>
+          }
+          testimonialAuthor="Barry Z"
         pageAbout={
           <div>
             <ul>
@@ -69,6 +83,7 @@ function NedOfficialsRouter(){
             </ul>
           </div>}
       />
+      <Footer />
     </div>
   )
 }
@@ -80,6 +95,23 @@ function TTLRouter(){
         pageTitle="Transformation Through Love"
         pageSubtitle="Mindfulness + Yoga Workshops + Mentoring"
         thumbnail={ttlImg}
+        testimonial={
+          <div>
+            <p>
+              "I used to struggle with my website (formatting, updating, getting it to look and work the way I want it to). 
+            </p>
+            <p>
+              Having Trevor take the reins on it has 
+              <strong> made my life easier and my online business more streamlined and able to flourish</strong>. 
+            </p>
+            <p>
+              He is patient, knowledgeable, diligent, and a pleasure to work with. <br />
+              I highly recommend him to anyone looking for website help that wants to work with someone trustworthy, 
+              caring, and conscientious!"
+            </p>
+          </div>
+          }
+          testimonialAuthor="JoAnna N"
         pageAbout={
           <div>
             <ul>
@@ -91,6 +123,7 @@ function TTLRouter(){
           </div>
         }
       />
+      <Footer />
     </div>
   )
 }
@@ -98,7 +131,7 @@ const navbarRoutesArray = [
   {path: '/about/', component: AboutRouter},
   {path: '/portfolio/', component: PortfolioRouter},
   {path: '/nedofficials/', component: NedOfficialsRouter},
-  {path: '/transformation-through-love', component: TTLRouter}
+  {path: '/transformation-through-love/', component: TTLRouter}
 ]
 const navbarRoutesMap = navbarRoutesArray.map(item => 
   <Route key={`${item.component}-${item.path}`} path={item.path} component={item.component} />

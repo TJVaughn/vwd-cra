@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class ContactCard extends Component {
     static defaultProps = {
-        emailText: "Email me at VaughnWebDev@gmail.com",
-        phoneText: "Call me at (203)200-7479"
+        emailText: "Email me at VaughnWebDev @gmail.com",
+        phoneText: "Call or text me at (203)200-7479"
     }
     render(){
     	return(

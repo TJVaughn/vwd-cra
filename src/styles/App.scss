@@ -54,6 +54,10 @@ a {
 }
 .Contact-card{
   padding: 20px 20px;
+  @media only screen and(max-width: 600px){
+    padding: 10px;
+    margin: 20px 5px;
+  }
   margin: 20px 10%;
   background-color: #333;
   border: 1px solid #000;
@@ -72,4 +76,17 @@ a {
   to {
       opacity: 1;
   }
+}
+
+.Back-to-top{
+  position: fixed;
+  // z-index: -111;
+  bottom: 10px;
+  left: 10px;
+  text-decoration: none;
+  color: #12d1b8;
+  border-radius: 5px;
+  background-color: #000;
+  padding: 2px;
+  opacity: 0.6; 
 }
