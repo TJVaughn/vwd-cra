@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Switch } from 'react-router-dom';
 import loadable from '@loadable/component';
+import ReactGA from 'react-ga';
 // import LazyLoad from 'react-lazyload';
 //STYLES IMPORT
 import './styles/NavbarRouter.scss';
@@ -27,6 +28,8 @@ const PortfolioSiteContainer = loadable(() => import('./paths/PortfolioSiteConta
 const Footer = loadable(() => import('./components/Footer'));
 
 //END IMPORTS
+ReactGA.initialize('UA-136509113-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function IndexRouter() {
   return(

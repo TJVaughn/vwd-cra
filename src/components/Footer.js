@@ -21,8 +21,8 @@ class Footer extends Component {
 
     render(){
     	return(
-    		<div className="Footer">
-    			<div>
+    		<div className="Footer Align-center">
+    			<div className="Footer-div">
 					<h3>Contact</h3>
 					<div>Trevor J Vaughn Hauck</div>
 					<div>Owner/Operator</div>
@@ -33,7 +33,7 @@ class Footer extends Component {
 					<div className="margin-bottom-50"></div>
 
 				</div>
-				<div>
+				<div className="Footer-div">
 					<h3>All Pages</h3>
 					{this.allPagesMap}
 				</div>

@@ -3,11 +3,11 @@
     grid-template-columns: repeat(2, 50%);
     background-color: #555;
     margin: 10px 0 0 0;
-    padding: 0 10%;
     color: #fff;
     z-index: -150;
+    padding: 5px;
     @media only screen and (max-width: 600px){
-        padding: 0 5px;
+        // padding: 0 5px;
     }
     @media only screen and (max-width: 370px){
         grid-template-columns: repeat(2, 50%);
@@ -15,4 +15,14 @@
 }
 .Footer-links {
     display: block;
+    // padding: 0 5px;
+}
+.Footer-div{
+    margin: 0 20%;
+    // padding: 0 20%;
+    @media only screen and (max-width: 600px){
+        margin: 0 5px;
+    }
+    // border: 1px solid #fff;
+    border-radius: 10px;
 }
