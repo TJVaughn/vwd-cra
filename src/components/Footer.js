@@ -37,7 +37,7 @@ class Footer extends Component {
 					<h3>All Pages</h3>
 					{this.allPagesMap}
 				</div>
-				<div>Vaughn Web Development %copy 2019</div>
+				{/* <div>Vaughn Web Development %copy 2019</div> */}
 
     		</div>
     	);

@@ -10,7 +10,7 @@ class HomePage extends Component{
         return(
             <div className="HomePage Margin-div">
                 <h2>
-                    Whatever you need out of your website, I am here to help you succeed!
+                    I build fast and effective websites for those who are ready to take their websites to the next level
                 </h2>
                 <BackToTop />
                 <LazyLoad once height={100} offset={-100}>
@@ -23,6 +23,20 @@ class HomePage extends Component{
                     </div>
                 </LazyLoad>
                 <div>
+                    <h3>Let's Work Together</h3>
+                    <LazyLoad offset={-115} height={100}>
+                        <p>
+                            If you are looking to revamp your website or build it from scratch, I can 
+                            provide you with a fast, beautiful website, that will achieve your goals.
+                        </p>
+                    </LazyLoad>
+                </div>
+                <div>
+                <LazyLoad offset={-110} height={100}>
+                    <ContactCard />
+                </LazyLoad>
+                </div>
+                <div>
                     <h3>Testimonials</h3>
                     <LazyLoad offset={-115} height={'100%'}>
                         <TestimonialSlider />
@@ -32,13 +46,11 @@ class HomePage extends Component{
                 {/* AFTER THE FOLD */}
                 <LazyLoad once height={100} offset={-115}>
                     <div className="Fade-in">
-                        <h2>The Results</h2>
+                        <h3>The Results</h3>
                         <PortfolioSites />
                     </div>
                 </LazyLoad>
-                <LazyLoad offset={-110} height={100}>
-                    <ContactCard />
-                </LazyLoad>
+                
                 <div className="margin-bottom-50"></div>
             </div>
         );

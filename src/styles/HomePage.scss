@@ -67,20 +67,23 @@
     }
 }
 .See-more-btn {
-    border: 2px solid #fff;
-    border-radius: 50%;
-    background-color: #12d1b8;
+    // border: 2px solid #fff;
+    // border-radius: 50%;
+    // background-color: #12d1b8;
     display: block;
     margin: 0 auto;
     // padding: 5px;
     cursor: pointer;
     width: 32px;
     height: 32px;
-    color: #fff;
-    font-size: 1.2rem;
-    text-align: center;
-    float: right;
+    // color: #fff;
+    // font-size: 1.2rem;
+    // text-align: center;
+    // float: right;
 }
 .left-testimonial-btn{
     float: left;
+}
+.right-testimonial-btn{
+    float: right;
 }
