@@ -9,7 +9,8 @@ class NedOfficialsPage extends Component {
 			thumbnail: '',
 			pageAbout: '',
 			testimonial: '',
-			testimonialAuthor: ''
+			testimonialAuthor: '',
+			imgLink: '#'
 		}
 	
     render(){
@@ -17,7 +18,10 @@ class NedOfficialsPage extends Component {
     		<div className="Portfolio-site-container Margin-div">
     			<h2 className="Portfolio-site-container-title">{this.props.pageTitle}</h2>
 				<h3 className="Portfolio-site-container-subtitle">{this.props.pageSubtitle}</h3>
-				<img className="Portfolio-site-container-img" src={this.props.thumbnail} alt={this.props.pageTitle} />
+				<a href={this.props.imgLink} target="_blank" rel="noopener noreferrer">
+					<img className="Portfolio-site-container-img" src={this.props.thumbnail} alt={this.props.pageTitle} />
+				</a>
+				
 				<p className="Portfolio-testimonial">
 					{this.props.testimonial}
 					<strong> {this.props.testimonialAuthor}</strong>
