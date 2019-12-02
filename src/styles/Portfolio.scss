@@ -102,3 +102,17 @@
     text-align: center;
     font-weight: 700;
 }
+.thirds-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    .thirds-grid-item{
+        border: 1px solid #555;
+        background-color: #555;
+        color: #12d1b8;
+        box-shadow: #555 5px 5px 5px;
+        border-radius: 10px;
+        text-align: center;
+        padding: 10px;
+        margin: 0 4%;
+    }
+}

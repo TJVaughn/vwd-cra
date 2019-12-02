@@ -13,7 +13,7 @@ import './styles/About.scss';
 import './styles/Portfolio.scss';
 import './styles/Footer.scss';
 
-import { NEDOfficialsContent, TTLContent } from './components/PortfolioContent';
+import { NEDOfficialsContent, TTLContent, WhetherAppContent } from './components/PortfolioContent';
 //IMAGES IMPORT 
 // const SiteLogo = loadable(() => import('../images/vwd-logo.png'));
 import SiteLogo from './images/vwd-logo-500.png';
@@ -35,7 +35,7 @@ ReactGA.pageview(window.location.pathname + window.location.search);
 function IndexRouter() {
   return(
       <div>
-          <FeaturedImg pageTitle="Take your business to the next level" />
+          <FeaturedImg pageTitle="Take your website to the next level" />
           <HomePage />
           <Footer />
       </div>
@@ -78,11 +78,21 @@ function TTLRouter(){
     </div>
   )
 }
+function WhetherAppRouter(){
+  return(
+    <div>
+      <FeaturedImg pageTitle="Whether App" />
+      <WhetherAppContent />
+      <Footer />
+    </div>
+  )
+}
 const navbarRoutesArray = [
   {path: '/about/', component: AboutRouter},
   {path: '/portfolio/', component: PortfolioRouter},
   {path: '/nedofficials/', component: NedOfficialsRouter},
-  {path: '/transformation-through-love/', component: TTLRouter}
+  {path: '/transformation-through-love/', component: TTLRouter},
+  {path: '/whetherapp/', component: WhetherAppRouter}
 ]
 const navbarRoutesMap = navbarRoutesArray.map(item => 
   <Route key={`${item.component}-${item.path}`} path={item.path} component={item.component} />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import profilePic from '../images/profile-pic.png';
+import profilePic from '../images/profile-pic.jpg';
 import LazyLoad from 'react-lazyload';
 import BackToTop from '../components/BackToTop';
 import ContactCard from '../components/ContactCard';
